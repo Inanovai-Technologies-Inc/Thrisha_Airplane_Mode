@@ -5,6 +5,17 @@ app_description = "Airplane Management"
 app_email = "admin@gmail.com"
 app_license = "mit"
 
+scheduler_events = {
+    "monthly": [
+        "airplane_mode.tasks.send_rent_reminders"
+    ]
+}
+fixtures = [
+    {
+        "dt": "Shop Type"
+    }
+]
+
 # Apps
 # ------------------
 

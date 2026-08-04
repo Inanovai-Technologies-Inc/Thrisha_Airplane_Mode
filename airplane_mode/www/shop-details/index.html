@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ shop.shop_name }}</title>
+    <link rel="stylesheet" href="airplane_mode/public/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>{{ shop.shop_name }}</h1>
+
+    <div class="details">
+        <p><strong>Shop Number:</strong> {{ shop.shop_number }}</p>
+        <p><strong>Tenant:</strong> {{ shop.tenant or "Not Assigned" }}</p>
+        <p><strong>Area:</strong> {{ shop.area }}</p>
+        <p><strong>Rent:</strong> ₹{{ shop.rent_amount }}</p>
+        <p><strong>Status:</strong> {{ shop.status }}</p>
+    </div>
+
+    {% if shop.status == "Available" %}
+    <a class="btn" href="/shop-lead?shop={{ shop.name }}">
+        Become Tenant
+    </a>
+    {% endif %}
+
+    <br><br>
+    <a href="/shops">← Back to Shops</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Airport Shops</title>
+
+<link rel="stylesheet"
+href="airplane_mode/public/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Airport Shops Available for Lease</h1>
+
+<div class="grid">
+
+{% for shop in shops %}
+
+<div class="card">
+
+<h2>{{ shop.shop_name }}</h2>
+
+<p>Shop No : {{ shop.shop_number }}</p>
+
+<p>Status : {{ shop.status }}</p>
+
+<a class="btn" href="/shop-details?name={{ shop.name }}">
+    View Details
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>
