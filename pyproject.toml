@@ -60,4 +60,4 @@ indent-style = "tab"
 docstring-code-format = true
 
 [tool.bench.frappe-dependencies]
-frappe = "version-15"
+frappe = ">=15.0.0,<16.0.0"
