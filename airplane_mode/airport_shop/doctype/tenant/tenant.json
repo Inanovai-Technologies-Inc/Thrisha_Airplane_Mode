@@ -41,16 +41,17 @@
   },
   {
    "fieldname": "company",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Company",
+   "options": "Customer",
    "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-13 12:00:27.686949",
+ "modified": "2026-08-08 08:57:49.090794",
  "modified_by": "Administrator",
  "module": "Airport Shop",
  "name": "Tenant",
