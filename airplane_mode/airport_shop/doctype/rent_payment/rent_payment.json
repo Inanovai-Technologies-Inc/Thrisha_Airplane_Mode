@@ -11,7 +11,8 @@
   "month",
   "amount",
   "payment_date",
-  "receipt_number"
+  "receipt_number",
+  "amended_from"
  ],
  "fields": [
   {
@@ -51,13 +52,23 @@
    "fieldtype": "Data",
    "label": "Receipt Number",
    "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rent Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-13 11:57:01.436038",
+ "modified": "2026-08-08 20:23:11.698009",
  "modified_by": "Administrator",
  "module": "Airport Shop",
  "name": "Rent Payment",
@@ -74,6 +85,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
