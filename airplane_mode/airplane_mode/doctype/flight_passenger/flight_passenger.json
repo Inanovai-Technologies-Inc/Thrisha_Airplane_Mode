@@ -8,7 +8,8 @@
   "first_name",
   "last_name",
   "date_of_birth",
-  "full_name"
+  "full_name",
+  "customer"
  ],
  "fields": [
   {
@@ -34,6 +35,12 @@
    "fieldtype": "Data",
    "label": "Full Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
   }
  ],
  "grid_page_length": 50,
@@ -45,7 +52,7 @@
    "link_fieldname": "passenger"
   }
  ],
- "modified": "2026-07-08 22:08:27.867455",
+ "modified": "2026-08-08 18:17:25.328337",
  "modified_by": "Administrator",
  "module": "Airplane_mode",
  "name": "Flight Passenger",
