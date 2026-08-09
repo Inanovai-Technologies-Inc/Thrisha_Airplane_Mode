@@ -153,10 +153,11 @@ class RentPayment(Document):
         payment.company = invoice.company
 
         payment.posting_date = self.payment_date
-
+        payment.reference_no = self.receipt_number
+        payment.reference_date = self.payment_date
         payment.party_type = "Customer"
-        payment.party = invoice.customer
 
+        payment.party = invoice.customer
         payment.paid_from = receivable_account
         payment.paid_to = paid_from
 
