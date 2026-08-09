@@ -8,3 +8,4 @@ class AirplaneFlight(WebsiteGenerator):
         self.status = "Completed"
 
         self.db_set("status", "Completed")
+        
