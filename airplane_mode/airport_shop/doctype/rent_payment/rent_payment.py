@@ -89,6 +89,15 @@ class RentPayment(Document):
 
         invoice.customer = customer
         invoice.company = company
+
+        company_currency = frappe.db.get_value(
+            "Company",
+            company,
+            "default_currency"
+            )
+        invoice.currency = company_currency
+        invoice.conversion_rate = 1
+        
         invoice.posting_date = (
             self.payment_date or frappe.utils.today()
         )
