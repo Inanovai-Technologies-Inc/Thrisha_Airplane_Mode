@@ -86,9 +86,12 @@ class RentPayment(Document):
 
         # Create Sales Invoice
         invoice = frappe.new_doc("Sales Invoice")
-
         invoice.customer = customer
         invoice.company = company
+        invoice.selling_price_list = "Standard Selling INR"
+        invoice.currency = "INR"
+        invoice.conversion_rate = 1
+        
         invoice.posting_date = (
             self.payment_date or frappe.utils.today()
         )
