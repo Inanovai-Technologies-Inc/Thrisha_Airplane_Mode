@@ -3,6 +3,7 @@
 from datetime import datetime
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
 
 
@@ -18,8 +19,10 @@ class RentPayment(Document):
 
 		if self.amount != shop.rent_amount:
 			frappe.throw(
-				f"Rent amount for this shop is ₹{shop.rent_amount:,.2f}. "
-				"Please enter the correct rent amount."
+				_(
+					f"Rent amount for this shop is ₹{shop.rent_amount:,.2f}. "
+					"Please enter the correct rent amount."
+				)
 			)
 
 		# Treat the Month field as a month, regardless of the exact date
@@ -46,7 +49,7 @@ class RentPayment(Document):
 		)
 
 		if exists:
-			frappe.throw("Rent has already been paid for this month.")
+			frappe.throw(_("Rent has already been paid for this month."))
 
 	def on_submit(self):
 		self.create_sales_invoice()
@@ -59,7 +62,7 @@ class RentPayment(Document):
 		customer = tenant.company
 
 		if not customer:
-			frappe.throw("Please select a Customer in the Tenant's Company field.")
+			frappe.throw(_("Please select a Customer in the Tenant's Company field."))
 
 		# Get default Company
 		company = frappe.defaults.get_user_default("Company")
@@ -68,7 +71,7 @@ class RentPayment(Document):
 			company = frappe.db.get_single_value("Global Defaults", "default_company")
 
 		if not company:
-			frappe.throw("Please set a default Company in ERPNext.")
+			frappe.throw(_("Please set a default Company in ERPNext."))
 
 		# Create Sales Invoice
 		invoice = frappe.new_doc("Sales Invoice")
@@ -98,7 +101,7 @@ class RentPayment(Document):
 		)
 
 		if not receivable_account:
-			frappe.throw("No Receivable account found for the Company.")
+			frappe.throw(_("No Receivable account found for the Company."))
 
 		# Find Bank or Cash account
 		paid_from = frappe.db.get_value(
@@ -108,7 +111,7 @@ class RentPayment(Document):
 		)
 
 		if not paid_from:
-			frappe.throw("No Bank or Cash account found for the Company.")
+			frappe.throw(_("No Bank or Cash account found for the Company."))
 
 		payment = frappe.new_doc("Payment Entry")
 

@@ -1,6 +1,7 @@
 import random
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
 
 
@@ -41,7 +42,7 @@ class AirplaneTicket(Document):
 	def on_submit(self):
 		# Ticket can be submitted only after passenger has boarded
 		if self.status != "Boarded":
-			frappe.throw("Ticket can only be submitted when passenger has boarded.")
+			frappe.throw(_("Ticket can only be submitted when passenger has boarded."))
 
 		# Create one Sales Invoice for this ticket
 		self.create_sales_invoice()
@@ -56,7 +57,7 @@ class AirplaneTicket(Document):
 
 		# Passenger must have a Customer
 		if not passenger.customer:
-			frappe.throw("Please set a Customer for the Flight Passenger " "before submitting the ticket.")
+			frappe.throw(_("Please set a Customer for the Flight Passenger before submitting the ticket."))
 
 		# Create Sales Invoice
 		invoice = frappe.new_doc("Sales Invoice")

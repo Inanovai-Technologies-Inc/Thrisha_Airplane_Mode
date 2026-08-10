@@ -11,7 +11,7 @@ class Shop(Document):
 			default_rent = frappe.db.get_single_value("Airport Shop Settings", "default_rent_amount")
 			self.rent_amount = default_rent
 
-	def after_save(self):
+	def on_update(self):
 		self.update_airport_counts()
 
 	def on_trash(self):

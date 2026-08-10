@@ -1,18 +1,18 @@
 frappe.ui.form.on("Airplane Ticket", {
 	refresh(frm) {
-		frm.add_custom_button("Assign Seat", () => {
+		frm.add_custom_button(__("Assign Seat"), () => {
 			let dialog = new frappe.ui.Dialog({
-				title: "Assign Seat",
+				title: __("Assign Seat"),
 
 				fields: [
 					{
-						label: "Seat",
+						label: __("Seat"),
 						fieldname: "seat",
 						fieldtype: "Data",
 					},
 				],
 
-				primary_action_label: "Assign",
+				primary_action_label: __("Assign"),
 
 				primary_action(values) {
 					frm.set_value("seat", values.seat);
