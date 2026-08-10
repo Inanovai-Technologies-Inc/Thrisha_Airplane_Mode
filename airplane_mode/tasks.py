@@ -82,3 +82,4 @@ def send_rent_reminders():
         )
 
     print("Completed")
+    

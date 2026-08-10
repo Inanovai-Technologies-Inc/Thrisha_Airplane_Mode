@@ -7,3 +7,4 @@ def get_context(context):
         frappe.throw("Shop not specified")
 
     context.shop = frappe.get_doc("Shop", name)
+    

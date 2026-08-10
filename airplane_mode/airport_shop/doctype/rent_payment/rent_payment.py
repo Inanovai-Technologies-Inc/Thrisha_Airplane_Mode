@@ -179,3 +179,4 @@ class RentPayment(Document):
         frappe.msgprint(
             f"Payment Entry {payment.name} created successfully."
         )
+        
