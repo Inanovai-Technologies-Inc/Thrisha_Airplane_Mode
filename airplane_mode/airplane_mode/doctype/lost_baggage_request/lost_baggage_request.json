@@ -1,0 +1,163 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "LBR-.#####",
+ "creation": "2026-08-11 20:13:05.392486",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "request_information_section",
+  "request_id",
+  "request_date",
+  "customer",
+  "column_break_kkjw",
+  "contact_number",
+  "email",
+  "flight_details_section",
+  "airline",
+  "departure_airport",
+  "arrival_airport",
+  "flight_date",
+  "column_break_iiau",
+  "baggage_details_section",
+  "number_of_bags",
+  "bag_color",
+  "bag_type",
+  "column_break_mbuh",
+  "size",
+  "approximate_weight"
+ ],
+ "fields": [
+  {
+   "fieldname": "request_information_section",
+   "fieldtype": "Section Break",
+   "label": "Request Information"
+  },
+  {
+   "fieldname": "request_id",
+   "fieldtype": "Data",
+   "label": "Request ID"
+  },
+  {
+   "fieldname": "request_date",
+   "fieldtype": "Date",
+   "label": "Request Date"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_kkjw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Phone",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "flight_details_section",
+   "fieldtype": "Section Break",
+   "label": "Flight Details"
+  },
+  {
+   "fieldname": "airline",
+   "fieldtype": "Link",
+   "label": "Airline",
+   "options": "Airline"
+  },
+  {
+   "fieldname": "departure_airport",
+   "fieldtype": "Link",
+   "label": "Departure Airport",
+   "options": "Airport"
+  },
+  {
+   "fieldname": "arrival_airport",
+   "fieldtype": "Link",
+   "label": "Arrival Airport",
+   "options": "Airport"
+  },
+  {
+   "fieldname": "flight_date",
+   "fieldtype": "Datetime",
+   "label": "Flight Date"
+  },
+  {
+   "fieldname": "column_break_iiau",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "baggage_details_section",
+   "fieldtype": "Section Break",
+   "label": "Baggage Details"
+  },
+  {
+   "fieldname": "number_of_bags",
+   "fieldtype": "Int",
+   "label": "Number of Bags"
+  },
+  {
+   "fieldname": "bag_color",
+   "fieldtype": "Data",
+   "label": "Bag Color"
+  },
+  {
+   "fieldname": "bag_type",
+   "fieldtype": "Select",
+   "label": "Bag type",
+   "options": "Suitcase\nBackpack\nDuffel Bag\nHandbag\nOther"
+  },
+  {
+   "fieldname": "size",
+   "fieldtype": "Select",
+   "label": "Size",
+   "options": "Small\nMedium\nLarge"
+  },
+  {
+   "fieldname": "column_break_mbuh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approximate_weight",
+   "fieldtype": "Float",
+   "label": "Approximate Weight"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-11 20:23:21.933639",
+ "modified_by": "Administrator",
+ "module": "Airplane_mode",
+ "name": "Lost Baggage Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
