@@ -30,12 +30,15 @@
   {
    "fieldname": "shop_number",
    "fieldtype": "Data",
-   "label": "Shop Number"
+   "label": "Shop Number",
+   "reqd": 1
   },
   {
    "fieldname": "shop_name",
    "fieldtype": "Data",
-   "label": "Shop Name"
+   "in_list_view": 1,
+   "label": "Shop Name",
+   "reqd": 1
   },
   {
    "fieldname": "tenant",
@@ -91,7 +94,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-13 11:03:46.698098",
+ "modified": "2026-08-11 10:48:47.516101",
  "modified_by": "Administrator",
  "module": "Airport Shop",
  "name": "Shop",
