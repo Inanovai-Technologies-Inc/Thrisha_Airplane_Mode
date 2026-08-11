@@ -5,16 +5,8 @@ app_description = "Airplane Management"
 app_email = "admin@gmail.com"
 app_license = "mit"
 
-scheduler_events = {
-    "monthly": [
-        "airplane_mode.tasks.send_rent_reminders"
-    ]
-}
-fixtures = [
-    {
-        "dt": "Shop Type"
-    }
-]
+scheduler_events = {"monthly": ["airplane_mode.tasks.send_rent_reminders"]}
+fixtures = [{"dt": "Shop Type"}]
 
 # Apps
 # ------------------
@@ -257,4 +249,3 @@ fixtures = [
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-
