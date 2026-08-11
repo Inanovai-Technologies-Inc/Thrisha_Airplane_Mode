@@ -25,7 +25,11 @@
   "bag_type",
   "column_break_mbuh",
   "size",
-  "approximate_weight"
+  "approximate_weight",
+  "delivery_details_section",
+  "delivery_status",
+  "delivered_on",
+  "delivery_remarks"
  ],
  "fields": [
   {
@@ -130,12 +134,34 @@
    "fieldname": "approximate_weight",
    "fieldtype": "Float",
    "label": "Approximate Weight"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "delivery_status",
+   "fieldtype": "Select",
+   "label": "Delivery Status",
+   "options": "Pending\nReady for Delivery\nDelivered"
+  },
+  {
+   "fieldname": "delivered_on",
+   "fieldtype": "Datetime",
+   "label": "Delivered On"
+  },
+  {
+   "fieldname": "delivery_remarks",
+   "fieldtype": "Small Text",
+   "label": "Delivery Remarks"
+  },
+  {
+   "fieldname": "delivery_details_section",
+   "fieldtype": "Section Break",
+   "label": "Delivery Details"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-11 20:23:21.933639",
+ "modified": "2026-08-11 23:30:33.083443",
  "modified_by": "Administrator",
  "module": "Airplane_mode",
  "name": "Lost Baggage Request",
