@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "GC-.#####",
+ "creation": "2026-08-11 10:02:14.298970",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "crew_member",
+  "employee_id",
+  "department",
+  "column_break_wmit",
+  "shift",
+  "duty_date",
+  "assigned_flight"
+ ],
+ "fields": [
+  {
+   "fieldname": "crew_member",
+   "fieldtype": "Link",
+   "label": "Crew Member",
+   "options": "Crew Member"
+  },
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Data",
+   "label": "Employee ID"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Select",
+   "label": "Department",
+   "options": "Ground Operations\nBaggage\nCheck-in"
+  },
+  {
+   "fieldname": "column_break_wmit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Select",
+   "label": "Shift",
+   "options": "Morning\nAfternoon\nNight"
+  },
+  {
+   "fieldname": "duty_date",
+   "fieldtype": "Date",
+   "label": "Duty Date"
+  },
+  {
+   "fieldname": "assigned_flight",
+   "fieldtype": "Link",
+   "label": "Assigned Flight",
+   "options": "Airplane Flight"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-11 10:07:07.280409",
+ "modified_by": "Administrator",
+ "module": "Airplane_mode",
+ "name": "Ground Crew",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
