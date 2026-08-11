@@ -10,7 +10,8 @@
   "customer_care_number",
   "website",
   "column_break_kytz",
-  "headquaters"
+  "headquaters",
+  "supplier"
  ],
  "fields": [
   {
@@ -42,6 +43,12 @@
    "fieldtype": "Data",
    "label": "Website",
    "options": "URL"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
   }
  ],
  "grid_page_length": 50,
@@ -53,7 +60,7 @@
    "link_fieldname": "airline"
   }
  ],
- "modified": "2026-07-10 10:58:38.732872",
+ "modified": "2026-08-08 20:41:18.219886",
  "modified_by": "Administrator",
  "module": "Airplane_mode",
  "name": "Airline",

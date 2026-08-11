@@ -1,0 +1,10 @@
+[
+  {
+    "doctype": "Warehouse Type",
+    "name": "Transit"
+  },
+  {
+    "doctype": "Warehouse Type",
+    "name": "Distribution"
+  }
+]

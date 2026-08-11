@@ -25,7 +25,8 @@
   "seat",
   "add_ons",
   "column_break_swgw",
-  "gate_number"
+  "gate_number",
+  "sales_invoice"
  ],
  "fields": [
   {
@@ -155,6 +156,13 @@
    "fieldname": "gate_number",
    "fieldtype": "Data",
    "label": "Gate number"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -166,7 +174,7 @@
    "link_fieldname": "Airplane"
   }
  ],
- "modified": "2026-07-10 16:01:55.310486",
+ "modified": "2026-08-08 18:24:30.394873",
  "modified_by": "Administrator",
  "module": "Airplane_mode",
  "name": "Airplane Ticket",

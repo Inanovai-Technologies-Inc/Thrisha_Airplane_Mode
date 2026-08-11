@@ -1,60 +1,79 @@
-import frappe
 import random
 
+import frappe
+from frappe import _
 from frappe.model.document import Document
 
 
 class AirplaneTicket(Document):
-    def before_insert(self):
+	def before_insert(self):
+		# Generate a seat number
+		number = random.randint(1, 99)
+		letter = random.choice(["A", "B", "C", "D", "E"])
+		self.seat = f"{number}{letter}"
 
-        number = random.randint(1, 99)
+		# Get gate number from the selected flight
+		if self.flight:
+			self.gate_number = frappe.db.get_value("Airplane Flight", self.flight, "gate_number")
 
-        letter = random.choice(["A","B","C","D","E"])
+	def validate(self):
+		self.calculate_total()
+		self.remove_duplicate_addons()
 
-        self.seat = f"{number}{letter}"
-    def before_insert(self):
-        
-        if self.flight:
-            self.gate_number = frappe.db.get_value(
-                "Airplane Flight",
-                self.flight,
-                "gate_number"
-            )
+	def calculate_total(self):
+		total = self.flight_price
 
-    def validate(self):
+		for addon in self.add_ons:
+			total += addon.amount
 
-        self.calculate_total()
+		self.total_amount = total
 
-        self.remove_duplicate_addons()
+	def remove_duplicate_addons(self):
+		unique = []
+		seen = set()
 
-    def calculate_total(self):
+		for row in self.add_ons:
+			if row.item not in seen:
+				seen.add(row.item)
+				unique.append(row)
 
-        total = self.flight_price
+		self.set("add_ons", unique)
 
-        for addon in self.add_ons:
+	def on_submit(self):
+		# Ticket can be submitted only after passenger has boarded
+		if self.status != "Boarded":
+			frappe.throw(_("Ticket can only be submitted when passenger has boarded."))
 
-            total += addon.amount
+		# Create one Sales Invoice for this ticket
+		self.create_sales_invoice()
 
-        self.total_amount = total
+	def create_sales_invoice(self):
+		# Prevent duplicate invoice creation
+		if self.sales_invoice:
+			return
 
-    def remove_duplicate_addons(self):
+		# Get passenger
+		passenger = frappe.get_doc("Flight Passenger", self.passenger)
 
-        unique = []
+		# Passenger must have a Customer
+		if not passenger.customer:
+			frappe.throw(_("Please set a Customer for the Flight Passenger before submitting the ticket."))
 
-        seen = set()
+		# Create Sales Invoice
+		invoice = frappe.new_doc("Sales Invoice")
 
-        for row in self.add_ons:
+		invoice.customer = passenger.customer
+		invoice.posting_date = frappe.utils.today()
 
-            if row.item not in seen:
+		# Add flight ticket as invoice item
+		invoice.append("items", {"item_code": "AIRPLANE-TICKET", "qty": 1, "rate": self.flight_price})
 
-                seen.add(row.item)
+		# Add ticket add-ons to the invoice
+		for addon in self.add_ons:
+			invoice.append("items", {"item_code": addon.item, "qty": 1, "rate": addon.amount})
 
-                unique.append(row)
+		# Save as Draft
+		invoice.insert()
 
-        self.set("add_ons", unique)
-
-    def on_submit(self):
-
-        if self.status != "Boarded":
-
-            frappe.throw("Ticket can only be submitted when passenger has boarded.")
+		# Store invoice reference in Airplane Ticket
+		self.db_set("sales_invoice", invoice.name)
