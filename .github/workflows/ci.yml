@@ -103,7 +103,7 @@ jobs:
       - name: Setup ERPNext Warehouse Type
         working-directory: /home/runner/frappe-bench
         run: |
-          bench --site test_site execute "frappe.db.exists('Warehouse Type', 'Transit') or frappe.get_doc({'doctype': 'Warehouse Type', 'warehouse_type': 'Transit'}).insert(ignore_permissions=True)"
+          bench --site test_site execute "frappe.db.exists('Warehouse Type', 'Transit') or frappe.get_doc({'doctype': 'Warehouse Type', 'name': 'Transit', 'warehouse_type': 'Transit'}).insert(ignore_permissions=True)"
 
       - name: Run Tests
         working-directory: /home/runner/frappe-bench
