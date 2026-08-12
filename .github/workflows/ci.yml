@@ -108,7 +108,7 @@ jobs:
       - name: Verify ERPNext Warehouse Type
         working-directory: /home/runner/frappe-bench
         run: |
-          bench --site test_site execute frappe.db.exists "Warehouse Type" "Transit"
+          bench --site test_site execute "frappe.db.exists('Warehouse Type', 'Transit')"
 
       - name: Run Tests
         working-directory: /home/runner/frappe-bench
