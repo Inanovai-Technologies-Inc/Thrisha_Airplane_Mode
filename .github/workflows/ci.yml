@@ -15,7 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-
     name: Server
 
     services:
@@ -163,6 +162,40 @@ jobs:
               raise Exception("All Customer Groups missing")
 
           print("All Customer Groups exists:", result)
+          PY
+
+      - name: Setup ERPNext Gender
+        working-directory: /home/runner/frappe-bench
+        run: |
+          bench --site test_site console <<'PY'
+          import frappe
+
+          for gender in ["Male", "Female", "Other"]:
+              if not frappe.db.exists("Gender", gender):
+                  gender_doc = frappe.get_doc({
+                      "doctype": "Gender",
+                      "gender": gender
+                  })
+                  gender_doc.insert(ignore_permissions=True)
+
+          frappe.db.commit()
+
+          print("ERPNext Gender records setup completed")
+          PY
+
+      - name: Verify ERPNext Gender
+        working-directory: /home/runner/frappe-bench
+        run: |
+          bench --site test_site console <<'PY'
+          import frappe
+
+          for gender in ["Male", "Female", "Other"]:
+              result = frappe.db.exists("Gender", gender)
+
+              if not result:
+                  raise Exception(f"{gender} Gender record missing")
+
+              print(f"{gender} Gender exists:", result)
           PY
 
       - name: Run Tests
