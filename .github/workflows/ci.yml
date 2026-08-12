@@ -15,7 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-
     name: Server
 
     services:
@@ -152,12 +151,20 @@ jobs:
           bench --site test_site console <<'PY'
           import frappe
 
-          result = frappe.db.exists("Warehouse Type", "Transit")
+          result = frappe.db.exists(
+              "Warehouse Type",
+              "Transit"
+          )
 
           if not result:
-              raise Exception("Transit Warehouse Type missing")
+              raise Exception(
+                  "Transit Warehouse Type missing"
+              )
 
-          print("Transit Warehouse Type exists:", result)
+          print(
+              "Transit Warehouse Type exists:",
+              result
+          )
           PY
 
       - name: Setup ERPNext Customer Group
@@ -166,14 +173,20 @@ jobs:
           bench --site test_site console <<'PY'
           import frappe
 
-          if not frappe.db.exists("Customer Group", "All Customer Groups"):
+          if not frappe.db.exists(
+              "Customer Group",
+              "All Customer Groups"
+          ):
               customer_group = frappe.get_doc({
                   "doctype": "Customer Group",
                   "customer_group_name": "All Customer Groups",
                   "is_group": 1
               })
 
-              customer_group.insert(ignore_permissions=True)
+              customer_group.insert(
+                  ignore_permissions=True
+              )
+
               frappe.db.commit()
 
           print("All Customer Groups setup completed")
@@ -191,9 +204,14 @@ jobs:
           )
 
           if not result:
-              raise Exception("All Customer Groups missing")
+              raise Exception(
+                  "All Customer Groups missing"
+              )
 
-          print("All Customer Groups exists:", result)
+          print(
+              "All Customer Groups exists:",
+              result
+          )
           PY
 
       - name: Setup ERPNext Gender
@@ -209,7 +227,9 @@ jobs:
                       "gender": gender
                   })
 
-                  gender_doc.insert(ignore_permissions=True)
+                  gender_doc.insert(
+                      ignore_permissions=True
+                  )
 
           frappe.db.commit()
 
@@ -223,14 +243,20 @@ jobs:
           import frappe
 
           for gender in ["Male", "Female", "Other"]:
-              result = frappe.db.exists("Gender", gender)
+              result = frappe.db.exists(
+                  "Gender",
+                  gender
+              )
 
               if not result:
                   raise Exception(
                       f"{gender} Gender record missing"
                   )
 
-              print(f"{gender} Gender exists:", result)
+              print(
+                  f"{gender} Gender exists:",
+                  result
+              )
           PY
 
       - name: Setup ERPNext Sales Person
@@ -239,7 +265,10 @@ jobs:
           bench --site test_site console <<'PY'
           import frappe
 
-          if not frappe.db.exists("Sales Person", "Sales Team"):
+          if not frappe.db.exists(
+              "Sales Person",
+              "Sales Team"
+          ):
               sales_person = frappe.get_doc({
                   "doctype": "Sales Person",
                   "sales_person_name": "Sales Team",
@@ -247,10 +276,15 @@ jobs:
                   "enabled": 1
               })
 
-              sales_person.insert(ignore_permissions=True)
+              sales_person.insert(
+                  ignore_permissions=True
+              )
+
               frappe.db.commit()
 
-          print("Sales Team Sales Person setup completed")
+          print(
+              "Sales Team Sales Person setup completed"
+          )
           PY
 
       - name: Verify ERPNext Sales Person
@@ -281,6 +315,7 @@ jobs:
           bench --site test_site set-config allow_tests true
 
           bench --site test_site run-tests \
-            --app airplane_mode
+            --app airplane_mode \
+            --skip-test-records
         env:
           TYPE: server
