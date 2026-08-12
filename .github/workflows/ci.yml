@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+
     name: Server
 
     services:
@@ -37,6 +38,7 @@ jobs:
         options: --health-cmd="mariadb-admin ping" --health-interval=5s --health-timeout=2s --health-retries=3
 
     steps:
+
       - name: Clone
         uses: actions/checkout@v3
 
@@ -69,8 +71,8 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@v4
-        id: yarn-cache
+      - name: Cache yarn
+        uses: actions/cache@v4
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -78,24 +80,49 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install MariaDB Client
-        run: sudo apt-get install mariadb-client
+        run: sudo apt-get install -y mariadb-client
 
       - name: Setup
         run: |
           pip install frappe-bench
-          bench init --skip-redis-config-generation --skip-assets --frappe-branch version-15 --python "$(which python)" ~/frappe-bench
-          mariadb --host 127.0.0.1 --port 3306 -u root -proot -e "SET GLOBAL character_set_server = 'utf8mb4'"
-          mariadb --host 127.0.0.1 --port 3306 -u root -proot -e "SET GLOBAL collation_server = 'utf8mb4_unicode_ci'"
+
+          bench init \
+            --skip-redis-config-generation \
+            --skip-assets \
+            --frappe-branch version-15 \
+            --python "$(which python)" \
+            ~/frappe-bench
+
+          mariadb \
+            --host 127.0.0.1 \
+            --port 3306 \
+            -u root \
+            -proot \
+            -e "SET GLOBAL character_set_server = 'utf8mb4'"
+
+          mariadb \
+            --host 127.0.0.1 \
+            --port 3306 \
+            -u root \
+            -proot \
+            -e "SET GLOBAL collation_server = 'utf8mb4_unicode_ci'"
 
       - name: Install
         working-directory: /home/runner/frappe-bench
         run: |
           bench get-app erpnext --branch version-15
           bench get-app airplane_mode $GITHUB_WORKSPACE
+
           bench setup requirements --dev
-          bench new-site --db-root-password root --admin-password admin test_site
+
+          bench new-site \
+            --db-root-password root \
+            --admin-password admin \
+            test_site
+
           bench --site test_site install-app erpnext
           bench --site test_site install-app airplane_mode
+
           bench build
         env:
           CI: "Yes"
@@ -112,6 +139,7 @@ jobs:
                   "name": "Transit",
                   "warehouse_type": "Transit"
               })
+
               warehouse_type.insert(ignore_permissions=True)
               frappe.db.commit()
 
@@ -144,6 +172,7 @@ jobs:
                   "customer_group_name": "All Customer Groups",
                   "is_group": 1
               })
+
               customer_group.insert(ignore_permissions=True)
               frappe.db.commit()
 
@@ -156,7 +185,10 @@ jobs:
           bench --site test_site console <<'PY'
           import frappe
 
-          result = frappe.db.exists("Customer Group", "All Customer Groups")
+          result = frappe.db.exists(
+              "Customer Group",
+              "All Customer Groups"
+          )
 
           if not result:
               raise Exception("All Customer Groups missing")
@@ -176,6 +208,7 @@ jobs:
                       "doctype": "Gender",
                       "gender": gender
                   })
+
                   gender_doc.insert(ignore_permissions=True)
 
           frappe.db.commit()
@@ -193,15 +226,61 @@ jobs:
               result = frappe.db.exists("Gender", gender)
 
               if not result:
-                  raise Exception(f"{gender} Gender record missing")
+                  raise Exception(
+                      f"{gender} Gender record missing"
+                  )
 
               print(f"{gender} Gender exists:", result)
+          PY
+
+      - name: Setup ERPNext Sales Person
+        working-directory: /home/runner/frappe-bench
+        run: |
+          bench --site test_site console <<'PY'
+          import frappe
+
+          if not frappe.db.exists("Sales Person", "Sales Team"):
+              sales_person = frappe.get_doc({
+                  "doctype": "Sales Person",
+                  "sales_person_name": "Sales Team",
+                  "is_group": 1,
+                  "enabled": 1
+              })
+
+              sales_person.insert(ignore_permissions=True)
+              frappe.db.commit()
+
+          print("Sales Team Sales Person setup completed")
+          PY
+
+      - name: Verify ERPNext Sales Person
+        working-directory: /home/runner/frappe-bench
+        run: |
+          bench --site test_site console <<'PY'
+          import frappe
+
+          result = frappe.db.exists(
+              "Sales Person",
+              "Sales Team"
+          )
+
+          if not result:
+              raise Exception(
+                  "Sales Team Sales Person missing"
+              )
+
+          print(
+              "Sales Team Sales Person exists:",
+              result
+          )
           PY
 
       - name: Run Tests
         working-directory: /home/runner/frappe-bench
         run: |
           bench --site test_site set-config allow_tests true
-          bench --site test_site run-tests --app airplane_mode
+
+          bench --site test_site run-tests \
+            --app airplane_mode
         env:
           TYPE: server
