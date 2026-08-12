@@ -15,7 +15,7 @@ class LostBaggageRequest(Document):
 		if self.email:
 			template = frappe.get_doc("Email Template", "Lost Baggage Status Update")
 
-			message = frappe.render_template(template.response_html, self.as_dict())
+			message = frappe.get_template(template.response_html).render(self.as_dict())
 
 			frappe.sendmail(
 				recipients=[self.email],
