@@ -16,9 +16,9 @@
   "flight_details_section",
   "airline",
   "departure_airport",
+  "column_break_zsac",
   "arrival_airport",
   "flight_date",
-  "column_break_iiau",
   "baggage_details_section",
   "number_of_bags",
   "bag_color",
@@ -26,14 +26,10 @@
   "column_break_mbuh",
   "size",
   "approximate_weight",
-  "delivery_details_section",
-  "delivery_status",
-  "delivered_on",
-  "delivery_remarks",
-  "delivery_preference",
-  "customer_address",
-  "use_different_address",
-  "delivery_address"
+  "request_status_section",
+  "status",
+  "status_remarks",
+  "last_updated"
  ],
  "fields": [
   {
@@ -100,10 +96,6 @@
    "label": "Flight Date"
   },
   {
-   "fieldname": "column_break_iiau",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "baggage_details_section",
    "fieldtype": "Section Break",
    "label": "Baggage Details"
@@ -140,55 +132,36 @@
    "label": "Approximate Weight"
   },
   {
-   "default": "Pending",
-   "fieldname": "delivery_status",
-   "fieldtype": "Select",
-   "label": "Delivery Status",
-   "options": "Pending\nReady for Delivery\nDelivered"
+   "fieldname": "column_break_zsac",
+   "fieldtype": "Column Break"
   },
   {
-   "fieldname": "delivered_on",
-   "fieldtype": "Datetime",
-   "label": "Delivered On"
-  },
-  {
-   "fieldname": "delivery_remarks",
-   "fieldtype": "Small Text",
-   "label": "Delivery Remarks"
-  },
-  {
-   "fieldname": "delivery_details_section",
+   "fieldname": "request_status_section",
    "fieldtype": "Section Break",
-   "label": "Delivery Details"
+   "label": "Request Status"
   },
   {
-   "fieldname": "delivery_preference",
+   "fieldname": "status",
    "fieldtype": "Select",
-   "label": "Delivery Preference",
-   "options": "Customer Pickup\nAirport Delivery"
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Submitted\nUnder Investigation\nBaggage Located\nReady for Delivery\nDelivered\nClosed"
   },
   {
-   "fieldname": "customer_address",
-   "fieldtype": "Link",
-   "label": "Customer Address",
-   "options": "Address"
-  },
-  {
-   "default": "0",
-   "fieldname": "use_different_address",
-   "fieldtype": "Check",
-   "label": "Use Different Address"
-  },
-  {
-   "fieldname": "delivery_address",
+   "fieldname": "status_remarks",
    "fieldtype": "Small Text",
-   "label": "Delivery Address"
+   "label": "Status Remarks"
+  },
+  {
+   "fieldname": "last_updated",
+   "fieldtype": "Datetime",
+   "label": "Last Updated"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-12 09:11:00.872872",
+ "modified": "2026-08-12 11:21:58.872535",
  "modified_by": "Administrator",
  "module": "Airplane_mode",
  "name": "Lost Baggage Request",
