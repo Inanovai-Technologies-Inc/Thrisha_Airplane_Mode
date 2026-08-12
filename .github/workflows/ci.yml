@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+
     name: Server
 
     services:
@@ -67,7 +68,7 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: 'echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT'
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
       - uses: actions/cache@v4
         id: yarn-cache
@@ -103,12 +104,34 @@ jobs:
       - name: Setup ERPNext Warehouse Type
         working-directory: /home/runner/frappe-bench
         run: |
-          bench --site test_site execute "lambda: frappe.db.exists('Warehouse Type', 'Transit') or frappe.get_doc({'doctype': 'Warehouse Type', 'name': 'Transit', 'warehouse_type': 'Transit'}).insert(ignore_permissions=True)"
+          bench --site test_site console <<'PY'
+          import frappe
+
+          if not frappe.db.exists("Warehouse Type", "Transit"):
+              warehouse_type = frappe.get_doc({
+                  "doctype": "Warehouse Type",
+                  "name": "Transit",
+                  "warehouse_type": "Transit"
+              })
+              warehouse_type.insert(ignore_permissions=True)
+              frappe.db.commit()
+
+          print("Transit Warehouse Type setup completed")
+          PY
 
       - name: Verify ERPNext Warehouse Type
         working-directory: /home/runner/frappe-bench
         run: |
-          bench --site test_site execute "frappe.db.exists('Warehouse Type', 'Transit')"
+          bench --site test_site console <<'PY'
+          import frappe
+
+          result = frappe.db.exists("Warehouse Type", "Transit")
+
+          if not result:
+              raise Exception("Transit Warehouse Type missing")
+
+          print("Transit Warehouse Type exists:", result)
+          PY
 
       - name: Run Tests
         working-directory: /home/runner/frappe-bench
