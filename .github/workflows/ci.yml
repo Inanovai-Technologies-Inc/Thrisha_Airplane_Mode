@@ -133,6 +133,38 @@ jobs:
           print("Transit Warehouse Type exists:", result)
           PY
 
+      - name: Setup ERPNext Customer Group
+        working-directory: /home/runner/frappe-bench
+        run: |
+          bench --site test_site console <<'PY'
+          import frappe
+
+          if not frappe.db.exists("Customer Group", "All Customer Groups"):
+              customer_group = frappe.get_doc({
+                  "doctype": "Customer Group",
+                  "customer_group_name": "All Customer Groups",
+                  "is_group": 1
+              })
+              customer_group.insert(ignore_permissions=True)
+              frappe.db.commit()
+
+          print("All Customer Groups setup completed")
+          PY
+
+      - name: Verify ERPNext Customer Group
+        working-directory: /home/runner/frappe-bench
+        run: |
+          bench --site test_site console <<'PY'
+          import frappe
+
+          result = frappe.db.exists("Customer Group", "All Customer Groups")
+
+          if not result:
+              raise Exception("All Customer Groups missing")
+
+          print("All Customer Groups exists:", result)
+          PY
+
       - name: Run Tests
         working-directory: /home/runner/frappe-bench
         run: |
