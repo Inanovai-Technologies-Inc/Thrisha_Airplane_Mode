@@ -1,39 +1,26 @@
 frappe.ui.form.on("Airplane Ticket", {
+	refresh(frm) {
+		frm.add_custom_button(__("Assign Seat"), () => {
+			let dialog = new frappe.ui.Dialog({
+				title: __("Assign Seat"),
 
-    refresh(frm) {
+				fields: [
+					{
+						label: __("Seat"),
+						fieldname: "seat",
+						fieldtype: "Data",
+					},
+				],
 
-        frm.add_custom_button("Assign Seat", () => {
+				primary_action_label: __("Assign"),
 
-            let dialog = new frappe.ui.Dialog({
+				primary_action(values) {
+					frm.set_value("seat", values.seat);
+					dialog.hide();
+				},
+			});
 
-                title: "Assign Seat",
-
-                fields: [
-
-                    {
-                        label: "Seat",
-                        fieldname: "seat",
-                        fieldtype: "Data"
-                    }
-
-                ],
-
-                primary_action_label: "Assign",
-
-                primary_action(values) {
-
-                    frm.set_value("seat", values.seat);
-
-                    dialog.hide();
-
-                }
-
-            });
-
-            dialog.show();
-
-        });
-
-    }
-
+			dialog.show();
+		});
+	},
 });
