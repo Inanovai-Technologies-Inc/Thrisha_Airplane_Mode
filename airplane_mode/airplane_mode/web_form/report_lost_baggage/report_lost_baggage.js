@@ -1,2 +1,1 @@
-frappe.ready(function() {
-})
+frappe.ready(function() {});
