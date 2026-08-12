@@ -29,7 +29,11 @@
   "delivery_details_section",
   "delivery_status",
   "delivered_on",
-  "delivery_remarks"
+  "delivery_remarks",
+  "delivery_preference",
+  "customer_address",
+  "use_different_address",
+  "delivery_address"
  ],
  "fields": [
   {
@@ -156,12 +160,35 @@
    "fieldname": "delivery_details_section",
    "fieldtype": "Section Break",
    "label": "Delivery Details"
+  },
+  {
+   "fieldname": "delivery_preference",
+   "fieldtype": "Select",
+   "label": "Delivery Preference",
+   "options": "Customer Pickup\nAirport Delivery"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address"
+  },
+  {
+   "default": "0",
+   "fieldname": "use_different_address",
+   "fieldtype": "Check",
+   "label": "Use Different Address"
+  },
+  {
+   "fieldname": "delivery_address",
+   "fieldtype": "Small Text",
+   "label": "Delivery Address"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-11 23:30:33.083443",
+ "modified": "2026-08-12 09:11:00.872872",
  "modified_by": "Administrator",
  "module": "Airplane_mode",
  "name": "Lost Baggage Request",
