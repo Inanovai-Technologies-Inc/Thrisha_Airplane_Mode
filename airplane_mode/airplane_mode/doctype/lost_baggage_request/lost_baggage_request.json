@@ -26,6 +26,14 @@
   "column_break_mbuh",
   "size",
   "approximate_weight",
+  "delivery_status",
+  "delivered_on",
+  "delivery_remarks",
+  "delivery_details_section",
+  "delivery_preference",
+  "customer_address",
+  "use_different_address",
+  "delivery_address",
   "request_status_section",
   "status",
   "status_remarks",
@@ -134,6 +142,51 @@
   {
    "fieldname": "column_break_zsac",
    "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "delivery_status",
+   "fieldtype": "Select",
+   "label": "Delivery Status",
+   "options": "Pending\nReady for Delivery\nDelivered"
+  },
+  {
+   "fieldname": "delivered_on",
+   "fieldtype": "Datetime",
+   "label": "Delivered On"
+  },
+  {
+   "fieldname": "delivery_remarks",
+   "fieldtype": "Small Text",
+   "label": "Delivery Remarks"
+  },
+  {
+   "fieldname": "delivery_details_section",
+   "fieldtype": "Section Break",
+   "label": "Delivery Details"
+  },
+  {
+   "fieldname": "delivery_preference",
+   "fieldtype": "Select",
+   "label": "Delivery Preference",
+   "options": "Customer Pickup\nAirport Delivery"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address"
+  },
+  {
+   "default": "0",
+   "fieldname": "use_different_address",
+   "fieldtype": "Check",
+   "label": "Use Different Address"
+  },
+  {
+   "fieldname": "delivery_address",
+   "fieldtype": "Small Text",
+   "label": "Delivery Address"
   },
   {
    "fieldname": "request_status_section",
