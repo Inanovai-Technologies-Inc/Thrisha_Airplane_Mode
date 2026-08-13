@@ -1,0 +1,50 @@
+name: Code Quality Checks
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+
+  push:
+    branches:
+      - develop
+
+jobs:
+  code-quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check Python syntax
+        run: |
+          python -m compileall airplane_mode
+
+      - name: Validate JSON files
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          failed = False
+
+          for file in Path(".").rglob("*.json"):
+              try:
+                  json.loads(file.read_text(encoding="utf-8"))
+                  print(f"Valid JSON: {file}")
+              except Exception as e:
+                  print(f"Invalid JSON: {file}")
+                  print(e)
+                  failed = True
+
+          if failed:
+              raise SystemExit(1)
+          PY

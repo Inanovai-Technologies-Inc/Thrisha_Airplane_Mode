@@ -20,9 +20,7 @@
   "arrival_airport",
   "flight_date",
   "baggage_details_section",
-  "number_of_bags",
-  "bag_color",
-  "bag_type",
+  "baggage_details",
   "column_break_mbuh",
   "size",
   "approximate_weight",
@@ -109,22 +107,6 @@
    "label": "Baggage Details"
   },
   {
-   "fieldname": "number_of_bags",
-   "fieldtype": "Int",
-   "label": "Number of Bags"
-  },
-  {
-   "fieldname": "bag_color",
-   "fieldtype": "Data",
-   "label": "Bag Color"
-  },
-  {
-   "fieldname": "bag_type",
-   "fieldtype": "Select",
-   "label": "Bag type",
-   "options": "Suitcase\nBackpack\nDuffel Bag\nHandbag\nOther"
-  },
-  {
    "fieldname": "size",
    "fieldtype": "Select",
    "label": "Size",
@@ -209,12 +191,18 @@
    "fieldname": "last_updated",
    "fieldtype": "Datetime",
    "label": "Last Updated"
+  },
+  {
+   "fieldname": "baggage_details",
+   "fieldtype": "Table",
+   "label": "Baggage details",
+   "options": "Lost Baggage Details"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-12 11:21:58.872535",
+ "modified": "2026-08-13 20:32:46.308762",
  "modified_by": "Administrator",
  "module": "Airplane_mode",
  "name": "Lost Baggage Request",
