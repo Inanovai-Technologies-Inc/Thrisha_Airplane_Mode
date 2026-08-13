@@ -4,7 +4,7 @@ def import_workspace():
     import frappe
 
     path = frappe.get_app_path("airplane_mode", "workspace", "airplane_mode", "airplane_mode.json")
-    with open(path, "r") as f:
+    with open(path) as f:
         data = json.load(f)
 
     name = data.get("name")
@@ -86,9 +86,9 @@ def create_slug_workspace():
     new.title = getattr(src, "title", src.label)
     new.module = getattr(src, "module", None)
     if hasattr(src, "public"):
-        new.public = getattr(src, "public")
+        new.public = src.public
     if hasattr(src, "is_default"):
-        new.is_default = getattr(src, "is_default")
+        new.is_default = src.is_default
     new.content = getattr(src, "content", None)
     new.links = getattr(src, "links", None)
     new.insert(ignore_permissions=True)
