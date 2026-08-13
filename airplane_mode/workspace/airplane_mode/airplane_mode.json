@@ -1,0 +1,118 @@
+{
+    "doctype": "Workspace",
+    "name": "Airplane_mode",
+    "title": "Airplane Mode",
+    "module": "Airplane_mode",
+    "public": 1,
+    "is_default": 0,
+    "extends": "",
+    "for_user": "",
+    "parent_page": "",
+    "restrict_to_domain": "",
+    "roles": [],
+    "sequence_id": 20,
+    "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Quick Access\",\"level\":4,\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airline\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airplane\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airport\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Flight Passenger\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airplane Flight\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airplane Ticket\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports & Masters\",\"level\":4,\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Flight Management\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Airport Management\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Passenger Management\",\"col\":4}}]",
+    "links": [
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Flight Management",
+            "link_count": 0,
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Airplane Flight",
+            "link_count": 0,
+            "link_to": "Airplane Flight",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Airplane Ticket",
+            "link_count": 0,
+            "link_to": "Airplane Ticket",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Flight Passenger",
+            "link_count": 0,
+            "link_to": "Flight Passenger",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Airport Management",
+            "link_count": 0,
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Airline",
+            "link_count": 0,
+            "link_to": "Airline",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Airplane",
+            "link_count": 0,
+            "link_to": "Airplane",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Airport",
+            "link_count": 0,
+            "link_to": "Airport",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Passenger Management",
+            "link_count": 0,
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Flight Passenger",
+            "link_count": 0,
+            "link_to": "Flight Passenger",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        }
+    ]
+}
