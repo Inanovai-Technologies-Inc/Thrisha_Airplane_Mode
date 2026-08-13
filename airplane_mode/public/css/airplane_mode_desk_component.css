@@ -1,0 +1,6 @@
+/* Minimal placeholder CSS for Airplane Mode desk component */
+.airplane-mode-app-icon {
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+}

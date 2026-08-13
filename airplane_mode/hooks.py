@@ -5,6 +5,8 @@ app_description = "Airplane Management"
 app_email = "admin@gmail.com"
 app_license = "mit"
 
+app_include_css = "/assets/airplane_mode/css/airplane_mode.css"
+
 scheduler_events = {"monthly": ["airplane_mode.tasks.send_rent_reminders"]}
 fixtures = [{"dt": "Shop Type"}, {"dt": "Warehouse Type"}]
 
@@ -19,7 +21,7 @@ add_to_apps_screen = [
 		"name": "airplane_mode",
 		"logo": "/assets/airplane_mode/logo.svg",
 		"title": "Airplane Mode",
-		"route": "/app",
+		"route": "app/airplane-mode",
 		"has_permission": "airplane_mode.api.permission.has_app_permission",
 	}
 ]
@@ -29,6 +31,8 @@ add_to_apps_screen = [
 # include js, css files in header of desk.html
 # app_include_css = "/assets/airplane_mode/css/airplane_mode.css"
 # app_include_js = "/assets/airplane_mode/js/airplane_mode.js"
+app_include_js = "/assets/airplane_mode/js/airplane_mode_desk_component.js"
+app_include_css = "/assets/airplane_mode/css/airplane_mode_desk_component.css"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/airplane_mode/css/airplane_mode.css"

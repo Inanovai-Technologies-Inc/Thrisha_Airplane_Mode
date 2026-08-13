@@ -1,0 +1,241 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"zLip0hmHNa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Quick Access</span>\",\"col\":12}},{\"id\":\"VGOIDBcupQ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Nx1_wMiG2j\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airline\",\"col\":4}},{\"id\":\"5GrJ-1nTGp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airplane\",\"col\":3}},{\"id\":\"LBrMzy28Tm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airport\",\"col\":3}},{\"id\":\"mAMI72TXAJ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"HaykY3ejQ7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airplane Flight\",\"col\":4}},{\"id\":\"Xhkkq5ZoiT\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"UZ2CIQBHTz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Crew Member\",\"col\":4}},{\"id\":\"LylOJXa8Xf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Flight Passenger\",\"col\":4}},{\"id\":\"7N5xGLD7Fa\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ads4LobDO_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lost Baggage Request\",\"col\":4}},{\"id\":\"azi8L8THX-\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"tac9rc9gUJ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Airport Shops</span>\",\"col\":12}},{\"id\":\"zlOgKMzfKh\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"p5T0p7rrUW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shops\",\"col\":4}},{\"id\":\"yKEp8rVuWs\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"AahjVdItC-\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tenant\",\"col\":3}},{\"id\":\"6lan8FAPdx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shop Lead\",\"col\":3}},{\"id\":\"XD5zqBIeiM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airport Shop Settings\",\"col\":3}},{\"id\":\"8h1n7RyrWJ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"v6076G90Fp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shop Type\",\"col\":3}},{\"id\":\"JvTcLKaGP6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rent Payment\",\"col\":3}}]",
+ "creation": "2026-08-13 11:04:02.569033",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Airplane Mode",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airline",
+   "link_count": 0,
+   "link_to": "Airline",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airport",
+   "link_count": 0,
+   "link_to": "Airport",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airplane",
+   "link_count": 0,
+   "link_to": "Airplane",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airplane Flight",
+   "link_count": 0,
+   "link_to": "Airplane Flight",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Flight Passenger",
+   "link_count": 0,
+   "link_to": "Flight Passenger",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airplane Ticket",
+   "link_count": 0,
+   "link_to": "Airplane Ticket",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shop",
+   "link_count": 0,
+   "link_to": "Shop",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shop Type",
+   "link_count": 0,
+   "link_to": "Shop Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tenant",
+   "link_count": 0,
+   "link_to": "Tenant",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Rent Payment",
+   "link_count": 0,
+   "link_to": "Rent Payment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airport Shop Settings",
+   "link_count": 0,
+   "link_to": "Airport Shop Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-08-13 13:19:51.307905",
+ "modified_by": "Administrator",
+ "module": "Airplane_mode",
+ "name": "Airplane Mode",
+ "number_cards": [],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Shops",
+   "link_to": "Shop",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Tenant",
+   "link_to": "Tenant",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Shop Type",
+   "link_to": "Shop Type",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Airplane",
+   "link_to": "Airplane",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Airline",
+   "link_to": "Airline",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Lost Baggage Request",
+   "link_to": "Lost Baggage Request",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Shop Lead",
+   "link_to": "Shop Lead",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Airport Shop Settings",
+   "link_to": "Airport Shop Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Airplane Flight",
+   "link_to": "Airplane Flight",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Airport",
+   "link_to": "Airport",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Rent Payment",
+   "link_to": "Rent Payment",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Crew Member",
+   "link_to": "Crew Member",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Flight Passenger",
+   "link_to": "Flight Passenger",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Airplane Mode"
+}
