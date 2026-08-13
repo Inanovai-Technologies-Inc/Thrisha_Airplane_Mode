@@ -8,7 +8,14 @@ app_license = "mit"
 app_include_css = "/assets/airplane_mode/css/airplane_mode.css"
 
 scheduler_events = {"monthly": ["airplane_mode.tasks.send_rent_reminders"]}
-fixtures = [{"dt": "Shop Type"}, {"dt": "Warehouse Type"}]
+fixtures = [
+	{"dt": "Shop Type"},
+	{"dt": "Warehouse Type"},
+	{
+		"dt": "Custom HTML Block",
+		"filters": [["name", "=", "Airplane Mode Welcome"]],
+	},
+]
 
 # Apps
 # ------------------
