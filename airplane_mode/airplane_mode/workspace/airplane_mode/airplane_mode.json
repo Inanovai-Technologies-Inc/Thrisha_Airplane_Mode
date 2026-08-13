@@ -1,8 +1,13 @@
 {
  "charts": [],
- "content": "[{\"id\":\"zLip0hmHNa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Quick Access</span>\",\"col\":12}},{\"id\":\"VGOIDBcupQ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Nx1_wMiG2j\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airline\",\"col\":4}},{\"id\":\"5GrJ-1nTGp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airplane\",\"col\":3}},{\"id\":\"LBrMzy28Tm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airport\",\"col\":3}},{\"id\":\"mAMI72TXAJ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"HaykY3ejQ7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airplane Flight\",\"col\":4}},{\"id\":\"Xhkkq5ZoiT\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"UZ2CIQBHTz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Crew Member\",\"col\":4}},{\"id\":\"LylOJXa8Xf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Flight Passenger\",\"col\":4}},{\"id\":\"7N5xGLD7Fa\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ads4LobDO_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lost Baggage Request\",\"col\":4}},{\"id\":\"azi8L8THX-\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"tac9rc9gUJ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Airport Shops</span>\",\"col\":12}},{\"id\":\"zlOgKMzfKh\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"p5T0p7rrUW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shops\",\"col\":4}},{\"id\":\"yKEp8rVuWs\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"AahjVdItC-\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tenant\",\"col\":3}},{\"id\":\"6lan8FAPdx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shop Lead\",\"col\":3}},{\"id\":\"XD5zqBIeiM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airport Shop Settings\",\"col\":3}},{\"id\":\"8h1n7RyrWJ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"v6076G90Fp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shop Type\",\"col\":3}},{\"id\":\"JvTcLKaGP6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rent Payment\",\"col\":3}}]",
+ "content": "[{\"id\":\"zLip0hmHNa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Quick Access</span>\",\"col\":12}},{\"id\":\"U4W_I6i8Uu\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Airplane Mode Welcome\",\"col\":12}},{\"id\":\"VGOIDBcupQ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Nx1_wMiG2j\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airline\",\"col\":4}},{\"id\":\"5GrJ-1nTGp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airplane\",\"col\":3}},{\"id\":\"LBrMzy28Tm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airport\",\"col\":3}},{\"id\":\"mAMI72TXAJ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"HaykY3ejQ7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airplane Flight\",\"col\":4}},{\"id\":\"Xhkkq5ZoiT\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"UZ2CIQBHTz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Crew Member\",\"col\":4}},{\"id\":\"LylOJXa8Xf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Flight Passenger\",\"col\":4}},{\"id\":\"7N5xGLD7Fa\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ads4LobDO_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lost Baggage Request\",\"col\":4}},{\"id\":\"azi8L8THX-\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"tac9rc9gUJ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Airport Shops</span>\",\"col\":12}},{\"id\":\"zlOgKMzfKh\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"p5T0p7rrUW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shops\",\"col\":4}},{\"id\":\"yKEp8rVuWs\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"AahjVdItC-\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tenant\",\"col\":3}},{\"id\":\"6lan8FAPdx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shop Lead\",\"col\":3}},{\"id\":\"XD5zqBIeiM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Airport Shop Settings\",\"col\":3}},{\"id\":\"8h1n7RyrWJ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"v6076G90Fp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shop Type\",\"col\":3}},{\"id\":\"JvTcLKaGP6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rent Payment\",\"col\":3}}]",
  "creation": "2026-08-13 11:04:02.569033",
- "custom_blocks": [],
+ "custom_blocks": [
+  {
+   "custom_block_name": "Airplane Mode Welcome",
+   "label": "Airplane Mode Welcome"
+  }
+ ],
  "docstatus": 0,
  "doctype": "Workspace",
  "hide_custom": 0,
@@ -122,7 +127,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-08-13 13:19:51.307905",
+ "modified": "2026-08-13 14:47:04.196848",
  "modified_by": "Administrator",
  "module": "Airplane_mode",
  "name": "Airplane Mode",
