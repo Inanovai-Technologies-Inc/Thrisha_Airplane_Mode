@@ -14,16 +14,15 @@ fixtures = [{"dt": "Shop Type"}, {"dt": "Warehouse Type"}]
 required_apps = ["erpnext"]
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "airplane_mode",
-# 		"logo": "/assets/airplane_mode/logo.png",
-# 		"title": "Airplane_mode",
-# 		"route": "/airplane_mode",
-# 		"has_permission": "airplane_mode.api.permission.has_app_permission"
-# 	}
-# ]
-
+add_to_apps_screen = [
+	{
+		"name": "airplane_mode",
+		"logo": "/assets/airplane_mode/logo.svg",
+		"title": "Airplane Mode",
+		"route": "/app",
+		"has_permission": "airplane_mode.api.permission.has_app_permission",
+	}
+]
 # Includes in <head>
 # ------------------
 
