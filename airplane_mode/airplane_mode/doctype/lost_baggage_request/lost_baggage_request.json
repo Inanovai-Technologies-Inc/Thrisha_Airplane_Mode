@@ -22,8 +22,6 @@
   "baggage_details_section",
   "baggage_details",
   "column_break_mbuh",
-  "size",
-  "approximate_weight",
   "delivery_status",
   "delivered_on",
   "delivery_remarks",
@@ -107,19 +105,8 @@
    "label": "Baggage Details"
   },
   {
-   "fieldname": "size",
-   "fieldtype": "Select",
-   "label": "Size",
-   "options": "Small\nMedium\nLarge"
-  },
-  {
    "fieldname": "column_break_mbuh",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "approximate_weight",
-   "fieldtype": "Float",
-   "label": "Approximate Weight"
   },
   {
    "fieldname": "column_break_zsac",
@@ -196,13 +183,14 @@
    "fieldname": "baggage_details",
    "fieldtype": "Table",
    "label": "Baggage details",
-   "options": "Lost Baggage Details"
+   "options": "Lost Baggage Details",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-13 20:32:46.308762",
+ "modified": "2026-08-14 11:30:15.075177",
  "modified_by": "Administrator",
  "module": "Airplane_mode",
  "name": "Lost Baggage Request",

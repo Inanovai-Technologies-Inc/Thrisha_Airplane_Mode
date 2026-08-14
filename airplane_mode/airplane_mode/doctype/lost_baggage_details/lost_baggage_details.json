@@ -23,6 +23,7 @@
   {
    "fieldname": "bag_color",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Bag color",
    "reqd": 1
   },
@@ -37,6 +38,7 @@
   {
    "fieldname": "size",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Size",
    "options": "Small\nMedium\nLarge",
    "reqd": 1
@@ -44,6 +46,7 @@
   {
    "fieldname": "approximate_weight",
    "fieldtype": "Float",
+   "in_list_view": 1,
    "label": "Approximate Weight",
    "reqd": 1
   }
@@ -52,7 +55,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-08-13 19:28:19.940434",
+ "modified": "2026-08-14 11:45:19.821049",
  "modified_by": "Administrator",
  "module": "Airplane_mode",
  "name": "Lost Baggage Details",
