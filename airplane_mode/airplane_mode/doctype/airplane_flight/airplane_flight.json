@@ -22,7 +22,8 @@
   "duration",
   "status",
   "is_published",
-  "route"
+  "route",
+  "flight_price"
  ],
  "fields": [
   {
@@ -125,6 +126,11 @@
    "fieldname": "gate_number",
    "fieldtype": "Data",
    "label": "Gate number"
+  },
+  {
+   "fieldname": "flight_price",
+   "fieldtype": "Currency",
+   "label": "Flight Price"
   }
  ],
  "grid_page_length": 50,
@@ -138,7 +144,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2026-07-10 16:00:56.966618",
+ "modified": "2026-08-16 13:03:44.541396",
  "modified_by": "Administrator",
  "module": "Airplane_mode",
  "name": "Airplane Flight",

@@ -12,19 +12,47 @@ class AirplaneTicket(Document):
 		letter = random.choice(["A", "B", "C", "D", "E"])
 		self.seat = f"{number}{letter}"
 
-		# Get gate number from the selected flight
+		# Fetch flight details from the selected Airplane Flight
 		if self.flight:
-			self.gate_number = frappe.db.get_value("Airplane Flight", self.flight, "gate_number")
+			flight = frappe.db.get_value(
+				"Airplane Flight",
+				self.flight,
+				[
+					"source_airport_code",
+					"destination_airport_code",
+					"date_of_departure",
+					"time_of_departure",
+					"duration",
+					"flight_price",
+					"gate_number",
+				],
+				as_dict=True,
+			)
+
+			if flight:
+				# Automatically fetch flight information
+				self.source_airport_code = flight.source_airport_code
+				self.destination_airport_code = flight.destination_airport_code
+				self.departure_date = flight.date_of_departure
+				self.departure_time = flight.time_of_departure
+				self.duration_of_flight = flight.duration
+				self.flight_price = flight.flight_price
+				self.gate_number = flight.gate_number
+
+	def after_insert(self):
+		# Automatically submit tickets created through the Web Form
+		if frappe.flags.in_web_form and self.docstatus == 0:
+			self.submit()
 
 	def validate(self):
 		self.calculate_total()
 		self.remove_duplicate_addons()
 
 	def calculate_total(self):
-		total = self.flight_price
+		total = self.flight_price or 0
 
 		for addon in self.add_ons:
-			total += addon.amount
+			total += addon.amount or 0
 
 		self.total_amount = total
 
@@ -40,40 +68,46 @@ class AirplaneTicket(Document):
 		self.set("add_ons", unique)
 
 	def on_submit(self):
-		# Ticket can be submitted only after passenger has boarded
-		if self.status != "Boarded":
-			frappe.throw(_("Ticket can only be submitted when passenger has boarded."))
+		# Send confirmation email after ticket is confirmed
+		self.send_confirmation_email()
 
-		# Create one Sales Invoice for this ticket
-		self.create_sales_invoice()
-
-	def create_sales_invoice(self):
-		# Prevent duplicate invoice creation
-		if self.sales_invoice:
-			return
-
-		# Get passenger
+	def send_confirmation_email(self):
+		# Get passenger information
 		passenger = frappe.get_doc("Flight Passenger", self.passenger)
 
-		# Passenger must have a Customer
-		if not passenger.customer:
-			frappe.throw(_("Please set a Customer for the Flight Passenger before submitting the ticket."))
+		# Check whether passenger has an email
+		if not passenger.email:
+			frappe.msgprint(_("Passenger does not have an email address."))
+			return
 
-		# Create Sales Invoice
-		invoice = frappe.new_doc("Sales Invoice")
+		# Send confirmation email
+		frappe.sendmail(
+			recipients=[passenger.email],
+			subject=f"Flight Ticket Confirmed - {self.name}",
+			message=f"""
+                <h3>Flight Ticket Confirmed</h3>
 
-		invoice.customer = passenger.customer
-		invoice.posting_date = frappe.utils.today()
+                <p>Dear {passenger.full_name},</p>
 
-		# Add flight ticket as invoice item
-		invoice.append("items", {"item_code": "AIRPLANE-TICKET", "qty": 1, "rate": self.flight_price})
+                <p>
+                    Your flight ticket has been successfully confirmed.
+                </p>
 
-		# Add ticket add-ons to the invoice
-		for addon in self.add_ons:
-			invoice.append("items", {"item_code": addon.item, "qty": 1, "rate": addon.amount})
+                <p>
+                    <b>Ticket:</b> {self.name}<br>
+                    <b>Flight:</b> {self.flight}<br>
+                    <b>From:</b> {self.source_airport_code}<br>
+                    <b>To:</b> {self.destination_airport_code}<br>
+                    <b>Departure Date:</b> {self.departure_date}<br>
+                    <b>Departure Time:</b> {self.departure_time}<br>
+                    <b>Duration:</b> {self.duration_of_flight}<br>
+                    <b>Flight Price:</b> ₹{self.flight_price}<br>
+                    <b>Seat:</b> {self.seat}<br>
+                    <b>Gate:</b> {self.gate_number}
+                </p>
 
-		# Save as Draft
-		invoice.insert()
-
-		# Store invoice reference in Airplane Ticket
-		self.db_set("sales_invoice", invoice.name)
+                <p>
+                    Thank you for booking with us.
+                </p>
+            """,
+		)
