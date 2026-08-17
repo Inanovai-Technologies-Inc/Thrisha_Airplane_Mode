@@ -1,0 +1,105 @@
+/* =========================================
+   Book Flight Ticket - Airline Style
+   Visual styling only
+   ========================================= */
+
+/* Main web form container */
+.web-form-container {
+    max-width: 900px !important;
+}
+
+/* Page title */
+.web-form-container .page-head {
+    text-align: center;
+}
+
+/* Form card */
+.web-form-container .form-page {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Introduction */
+.web-form-container .introduction {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* Section headings */
+.web-form-container .section-head {
+    font-size: 17px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* Field labels */
+.web-form-container .control-label {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* Input fields */
+.web-form-container .form-control {
+    border-radius: 10px;
+    min-height: 42px;
+    border: 1px solid #d9dee7;
+    transition: all 0.2s ease;
+}
+
+/* Input focus */
+.web-form-container .form-control:focus {
+    border-color: #4c6fff;
+    box-shadow: 0 0 0 3px rgba(76, 111, 255, 0.12);
+}
+
+/* Read-only fetched fields */
+.web-form-container input[readonly],
+.web-form-container textarea[readonly] {
+    background: #f5f7fb !important;
+    color: #4b5563;
+}
+
+/* Flight price */
+.web-form-container input[data-fieldname="flight_price"] {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* Submit button */
+.web-form-container .btn-primary {
+    width: 100%;
+    min-height: 48px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Button hover */
+.web-form-container .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Better spacing between fields */
+.web-form-container .form-group {
+    margin-bottom: 18px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .web-form-container .form-page {
+        padding: 20px !important;
+        border-radius: 12px;
+    }
+
+    .web-form-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

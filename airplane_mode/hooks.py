@@ -1,11 +1,13 @@
 app_name = "airplane_mode"
 app_title = "Airplane_mode"
+app_logo_url = "/assets/airplane_mode/icons/airplane.svg"
 app_publisher = "Thrisha"
 app_description = "Airplane Management"
 app_email = "admin@gmail.com"
 app_license = "mit"
 
 app_include_css = "/assets/airplane_mode/css/airplane_mode.css"
+app_include_icons = ["airplane_mode/icons/airplane.svg"]
 
 scheduler_events = {"monthly": ["airplane_mode.tasks.send_rent_reminders"]}
 fixtures = [
@@ -37,7 +39,6 @@ add_to_apps_screen = [
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/airplane_mode/css/airplane_mode.css"
-# app_include_js = "/assets/airplane_mode/js/airplane_mode.js"
 app_include_js = "/assets/airplane_mode/js/airplane_mode_desk_component.js"
 app_include_css = "/assets/airplane_mode/css/airplane_mode_desk_component.css"
 

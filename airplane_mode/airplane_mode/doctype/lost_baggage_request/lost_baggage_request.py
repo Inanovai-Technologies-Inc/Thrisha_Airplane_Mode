@@ -17,4 +17,5 @@ class LostBaggageRequest(Document):
 				recipients=[self.email],
 				subject=email["subject"],
 				message=email["message"],
+				now=True,
 			)
