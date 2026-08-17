@@ -28,7 +28,7 @@ required_apps = ["erpnext"]
 add_to_apps_screen = [
 	{
 		"name": "airplane_mode",
-		"logo": "/assets/airplane_mode/logo.svg",
+		"logo": "/assets/airplane_mode/images/inanovai-logo.png",
 		"title": "Airplane Mode",
 		"route": "app/airplane-mode",
 		"has_permission": "airplane_mode.api.permission.has_app_permission",
@@ -51,7 +51,13 @@ app_include_css = "/assets/airplane_mode/css/airplane_mode_desk_component.css"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
-# webform_include_css = {"doctype": "public/css/doctype.css"}
+webform_include_css = {
+	"report-lost-baggage": "/assets/airplane_mode/css/report_lost_baggage.css",
+	"Lost Baggage Request": "/assets/airplane_mode/css/report_lost_baggage.css",
+}
+
+# Fallback: include on all website pages if webform-specific include doesn't load
+web_include_css = "/assets/airplane_mode/css/report_lost_baggage.css"
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
@@ -158,6 +164,12 @@ app_include_css = "/assets/airplane_mode/css/airplane_mode_desk_component.css"
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events = {
+	"Employee": {
+		"after_insert": "airplane_mode.employee_permissions.update_employee_company_permission",
+		"on_update": "airplane_mode.employee_permissions.update_employee_company_permission",
+	}
+}
 
 # Scheduled Tasks
 # ---------------

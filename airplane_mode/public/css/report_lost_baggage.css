@@ -1,0 +1,810 @@
+/* ============================================================
+   INANOVAI
+   REPORT LOST BAGGAGE - WEB FORM
+   Clean Professional Layout
+   ============================================================ */
+
+
+/* ============================================================
+   1. GLOBAL PAGE
+   ============================================================ */
+
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100% !important;
+
+    background: #f5f7fa !important;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif !important;
+
+    color: #1f2937 !important;
+
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden !important;
+}
+
+
+/* ============================================================
+   2. TOP NAVBAR
+   ============================================================ */
+
+/* Keep navbar clean and compact */
+.navbar {
+    min-height: 58px !important;
+    height: 58px !important;
+
+    background: #ffffff !important;
+
+    border-bottom: 1px solid #e5e7eb !important;
+
+    box-shadow: none !important;
+
+    padding: 0 28px !important;
+}
+
+
+/* Home text */
+.navbar .navbar-brand {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+}
+
+
+/* ============================================================
+   3. INANOVAI LOGO - TOP LEFT
+   ============================================================ */
+
+/*
+   Frappe Web Forms do not always use the same header class.
+
+   This places the logo inside the page near the top-left
+   without depending on .web-form-header.
+*/
+
+.web-form::before {
+    display: none !important;
+}
+
+.web-form-head::before,
+.web-form-header::before {
+    content: "";
+
+    display: block !important;
+
+    width: 145px;
+    height: 42px;
+
+    margin: 0 0 18px 0 !important;
+
+    background-image: url("/assets/airplane_mode/images/inanovai-logo.png");
+
+    background-repeat: no-repeat;
+
+    background-position: left center;
+
+    background-size: contain;
+}
+
+
+/* ============================================================
+   4. MAIN WEB FORM CONTAINER
+   ============================================================ */
+
+.web-form {
+    position: relative !important;
+
+    width: calc(100% - 40px) !important;
+
+    max-width: 1100px !important;
+
+    margin: 35px auto 60px auto !important;
+
+    padding-top: 52px !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+}
+
+
+/* ============================================================
+   5. FORM HEADER
+   ============================================================ */
+
+.web-form-head,
+.web-form-header {
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+
+    padding: 0 !important;
+
+    margin: 0 0 24px 0 !important;
+
+    text-align: left !important;
+
+    display: block !important;
+}
+
+
+/* Remove unnecessary pseudo logo */
+.web-form-head::before,
+.web-form-header::before {
+    display: none !important;
+}
+
+
+/* Main title */
+.web-form-head h1,
+.web-form-header h1 {
+
+    display: inline-block !important;
+
+    margin: 0 10px 0 0 !important;
+
+    padding: 0 !important;
+
+    color: #123f68 !important;
+
+    font-size: 30px !important;
+
+    line-height: 1.25 !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: -0.5px !important;
+
+    text-align: left !important;
+    vertical-align: middle !important;
+}
+
+
+/* ============================================================
+   6. NOT SAVED INDICATOR
+   ============================================================ */
+
+.web-form .indicator-pill {
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    margin-left: 8px !important;
+
+    padding: 4px 10px !important;
+
+    border-radius: 20px !important;
+
+    font-size: 11px !important;
+
+    font-weight: 600 !important;
+}
+
+
+/* ============================================================
+   7. MAIN FORM CARD
+   ============================================================ */
+
+/*
+   Frappe may have different wrappers depending on version.
+
+   These selectors make the actual form area look like one
+   professional card.
+*/
+
+.web-form .form-layout {
+
+    background: #ffffff !important;
+
+    border: 1px solid #e5e7eb !important;
+
+    border-radius: 14px !important;
+
+    padding: 30px 34px 34px 34px !important;
+
+    box-shadow:
+        0 4px 16px rgba(15, 23, 42, 0.05) !important;
+}
+
+
+/* ============================================================
+   8. FORM SECTIONS
+   ============================================================ */
+
+.web-form .form-section {
+
+    margin: 0 0 30px 0 !important;
+
+    padding: 0 !important;
+
+    border: none !important;
+}
+
+
+/* Last section */
+.web-form .form-section:last-child {
+
+    margin-bottom: 0 !important;
+}
+
+
+/* ============================================================
+   9. SECTION HEADINGS
+   ============================================================ */
+
+.web-form .section-head {
+
+    margin: 0 0 20px 0 !important;
+
+    padding: 0 0 12px 0 !important;
+
+    color: #174f7d !important;
+
+    font-size: 18px !important;
+
+    line-height: 1.3 !important;
+
+    font-weight: 700 !important;
+
+    border-bottom: 1px solid #e8edf2 !important;
+
+    text-transform: none !important;
+}
+
+
+/* Remove unwanted arrow/icon spacing */
+.web-form .section-head .collapse-indicator {
+
+    margin-right: 6px !important;
+}
+
+
+/* ============================================================
+   10. SECTION BODY
+   ============================================================ */
+
+.web-form .section-body {
+
+    padding: 0 !important;
+
+    margin: 0 !important;
+}
+
+
+/* ============================================================
+   11. FORM ROW
+   ============================================================ */
+
+.web-form .section-body .row {
+
+    display: grid !important;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    column-gap: 24px !important;
+
+    row-gap: 0 !important;
+
+    margin: 0 !important;
+}
+
+
+/* ============================================================
+   12. FORM COLUMNS
+   ============================================================ */
+
+.web-form .section-body .form-column {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    flex: none !important;
+
+    padding: 0 !important;
+
+    margin: 0 !important;
+}
+
+
+/*
+   Frappe sometimes creates bootstrap columns such as:
+
+   col-sm-6
+   col-md-6
+   col-lg-6
+
+   Force them to occupy one grid cell.
+*/
+
+.web-form .section-body [class*="col-"] {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    flex: none !important;
+
+    padding-left: 0 !important;
+
+    padding-right: 0 !important;
+}
+
+
+/* ============================================================
+   13. FIELD CONTAINER
+   ============================================================ */
+
+.web-form .frappe-control {
+
+    margin-bottom: 18px !important;
+
+    padding: 0 !important;
+}
+
+
+/* ============================================================
+   14. FIELD LABELS
+   ============================================================ */
+
+.web-form .control-label {
+
+    display: block !important;
+
+    margin: 0 0 7px 0 !important;
+
+    padding: 0 !important;
+
+    color: #344054 !important;
+
+    font-size: 13px !important;
+
+    line-height: 1.4 !important;
+
+    font-weight: 600 !important;
+}
+
+
+/* Required star */
+.web-form .control-label .reqd,
+.web-form .reqd {
+
+    color: #d92d20 !important;
+}
+
+
+/* ============================================================
+   15. INPUT FIELDS
+   ============================================================ */
+
+.web-form input.form-control,
+.web-form textarea.form-control,
+.web-form select.form-control,
+.web-form .form-control {
+
+    width: 100% !important;
+
+    min-height: 46px !important;
+
+    padding: 11px 13px !important;
+
+    background: #ffffff !important;
+
+    color: #1f2937 !important;
+
+    border: 1px solid #d0d5dd !important;
+
+    border-radius: 8px !important;
+
+    box-shadow: none !important;
+
+    font-size: 14px !important;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+
+/* ============================================================
+   16. TEXTAREA
+   ============================================================ */
+
+.web-form textarea.form-control {
+
+    min-height: 110px !important;
+
+    resize: vertical !important;
+}
+
+
+/* ============================================================
+   17. INPUT HOVER
+   ============================================================ */
+
+.web-form input.form-control:hover,
+.web-form textarea.form-control:hover,
+.web-form select.form-control:hover {
+
+    border-color: #98a2b3 !important;
+}
+
+
+/* ============================================================
+   18. INPUT FOCUS
+   ============================================================ */
+
+.web-form input.form-control:focus,
+.web-form textarea.form-control:focus,
+.web-form select.form-control:focus {
+
+    border-color: #1976b9 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(25, 118, 185, 0.10) !important;
+
+    outline: none !important;
+}
+
+
+/* ============================================================
+   19. PLACEHOLDER
+   ============================================================ */
+
+.web-form input::placeholder,
+.web-form textarea::placeholder {
+
+    color: #98a2b3 !important;
+
+    opacity: 1 !important;
+}
+
+
+/* ============================================================
+   20. PHONE FIELD
+   ============================================================ */
+
+.web-form .phone-field {
+
+    min-height: 46px !important;
+
+    border-radius: 8px !important;
+}
+
+
+/* ============================================================
+   21. DATE FIELD
+   ============================================================ */
+
+.web-form input[data-fieldtype="Date"] {
+
+    min-height: 46px !important;
+}
+
+
+/* ============================================================
+   22. DESCRIPTION / HELP
+   ============================================================ */
+
+.web-form .help-box,
+.web-form .help-block,
+.web-form .description {
+
+    margin-top: 6px !important;
+
+    color: #667085 !important;
+
+    font-size: 12px !important;
+
+    line-height: 1.5 !important;
+}
+
+
+/* ============================================================
+   23. LINKS
+   ============================================================ */
+
+.web-form a {
+
+    color: #1769aa !important;
+
+    text-decoration: none !important;
+}
+
+.web-form a:hover {
+
+    text-decoration: underline !important;
+}
+
+
+/* ============================================================
+   24. CHILD TABLE
+   ============================================================ */
+
+.web-form .grid {
+
+    margin-top: 5px !important;
+
+    border: 1px solid #e4e7ec !important;
+
+    border-radius: 9px !important;
+
+    overflow: hidden !important;
+
+    background: #ffffff !important;
+
+    box-shadow: none !important;
+
+    width: 100% !important;
+
+    table-layout: fixed !important;
+}
+
+
+.web-form .grid .grid-heading-row,
+.web-form .grid .grid-row,
+.web-form .grid .grid-body {
+    display: flex !important;
+    width: 100% !important;
+    align-items: stretch !important;
+}
+
+
+.web-form .grid .grid-heading-row > *,
+.web-form .grid .grid-row > *,
+.web-form .grid .grid-body > * {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    float: none !important;
+    vertical-align: middle !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+}
+
+
+.web-form .grid .grid-heading-row .grid-static-col,
+.web-form .grid .grid-row .grid-static-col {
+    width: auto !important;
+    min-width: 0 !important;
+    flex: 1 1 0 !important;
+}
+
+
+/* Grid header */
+.web-form .grid-heading-row {
+
+    min-height: 42px !important;
+
+    background: #f8fafc !important;
+
+    color: #344054 !important;
+
+    font-size: 12px !important;
+
+    font-weight: 600 !important;
+
+    border-bottom: 1px solid #e4e7ec !important;
+}
+
+
+/* ============================================================
+   25. SUBMIT AREA
+   ============================================================ */
+
+.web-form .form-footer {
+
+    margin-top: 28px !important;
+
+    padding-top: 20px !important;
+
+    border-top: 1px solid #eaecf0 !important;
+}
+
+
+/* ============================================================
+   26. SUBMIT BUTTON
+   ============================================================ */
+
+.web-form .btn-primary {
+
+    min-height: 44px !important;
+
+    padding: 10px 26px !important;
+
+    background: #145f91 !important;
+
+    border: 1px solid #145f91 !important;
+
+    border-radius: 8px !important;
+
+    color: #ffffff !important;
+
+    font-size: 14px !important;
+
+    font-weight: 600 !important;
+
+    box-shadow: none !important;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease !important;
+}
+
+
+/* ============================================================
+   27. SUBMIT BUTTON HOVER
+   ============================================================ */
+
+.web-form .btn-primary:hover {
+
+    background: #0f4f7a !important;
+
+    border-color: #0f4f7a !important;
+
+    transform: translateY(-1px) !important;
+}
+
+
+/* ============================================================
+   28. BUTTON DISABLED
+   ============================================================ */
+
+.web-form .btn-primary:disabled {
+
+    opacity: 0.6 !important;
+
+    transform: none !important;
+}
+
+
+/* ============================================================
+   29. REMOVE UNNECESSARY FIELDS / SPACING
+   ============================================================ */
+
+.web-form .form-section .row:last-child {
+
+    margin-bottom: 0 !important;
+}
+
+
+/* ============================================================
+   30. MOBILE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .navbar {
+
+        padding: 0 16px !important;
+
+        min-height: 54px !important;
+
+        height: 54px !important;
+    }
+
+
+    .web-form {
+
+        width: calc(100% - 24px) !important;
+
+        margin: 25px auto 40px auto !important;
+    }
+
+
+    .web-form::before {
+
+        position: relative !important;
+
+        top: auto !important;
+
+        left: auto !important;
+
+        display: block !important;
+
+        width: 130px !important;
+
+        height: 38px !important;
+
+        margin-bottom: 18px !important;
+    }
+
+
+    .web-form-head h1,
+    .web-form-header h1 {
+
+        font-size: 24px !important;
+
+        line-height: 1.3 !important;
+    }
+
+
+    .web-form .form-layout {
+
+        padding: 22px 20px 26px 20px !important;
+
+        border-radius: 12px !important;
+    }
+
+
+    /* One column on mobile */
+
+    .web-form .section-body .row {
+
+        grid-template-columns: 1fr !important;
+
+        column-gap: 0 !important;
+    }
+
+
+    .web-form .section-head {
+
+        font-size: 17px !important;
+
+        margin-bottom: 17px !important;
+    }
+
+
+    .web-form .frappe-control {
+
+        margin-bottom: 16px !important;
+    }
+}
+
+
+/* ============================================================
+   31. VERY SMALL SCREEN
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .web-form {
+
+        width: calc(100% - 20px) !important;
+
+        margin-top: 18px !important;
+    }
+
+
+    .web-form .form-layout {
+
+        padding: 18px 15px 22px 15px !important;
+    }
+
+
+    .web-form-head h1,
+    .web-form-header h1 {
+
+        font-size: 21px !important;
+    }
+
+
+    .web-form .control-label {
+
+        font-size: 12px !important;
+    }
+
+
+    .web-form input.form-control,
+    .web-form textarea.form-control,
+    .web-form select.form-control {
+
+        min-height: 44px !important;
+
+        font-size: 13px !important;
+    }
+}
