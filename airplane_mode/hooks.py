@@ -165,10 +165,10 @@ web_include_css = "/assets/airplane_mode/css/report_lost_baggage.css"
 # 	}
 # }
 doc_events = {
-    "Employee": {
-        "after_insert": "airplane_mode.employee_permissions.update_employee_company_permission",
-        "on_update": "airplane_mode.employee_permissions.update_employee_company_permission",
-    }
+	"Employee": {
+		"after_insert": "airplane_mode.employee_permissions.update_employee_company_permission",
+		"on_update": "airplane_mode.employee_permissions.update_employee_company_permission",
+	}
 }
 
 # Scheduled Tasks
