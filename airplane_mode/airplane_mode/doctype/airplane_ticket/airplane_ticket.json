@@ -117,9 +117,11 @@
    "reqd": 1
   },
   {
+   "fetch_from": "flight.flight_price",
    "fieldname": "flight_price",
    "fieldtype": "Currency",
    "label": "Flight Price",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -174,7 +176,7 @@
    "link_fieldname": "Airplane"
   }
  ],
- "modified": "2026-08-08 18:24:30.394873",
+ "modified": "2026-08-16 14:02:01.091850",
  "modified_by": "Administrator",
  "module": "Airplane_mode",
  "name": "Airplane Ticket",
